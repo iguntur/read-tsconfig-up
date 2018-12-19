@@ -1,0 +1,50 @@
+{
+	"name": "read-tsconfig-up",
+	"version": "1.0.1",
+	"description": "Find up and read `tsconfig.json` file",
+	"repository": "iguntur/read-tsconfig-up",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"typings": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"prepublishOnly": "npm run build:release",
+		"build": "npm run clean && tsc",
+		"build:release": "npm run test && npm run clean:dist",
+		"clean": "rm -rf dist",
+		"clean:dist": "rm -rf dist/*.test.*",
+		"test": "npm run build && ava"
+	},
+	"author": {
+		"name": "Guntur Poetra",
+		"email": "poetra.guntur@gmail.com",
+		"url": "https://github.com/iguntur"
+	},
+	"keywords": [
+		"config",
+		"find-up",
+		"package",
+		"read-up",
+		"read",
+		"ts",
+		"tsc",
+		"tsconfig",
+		"typescript",
+		"up"
+	],
+	"engines": {
+		"node": ">=6"
+	},
+	"dependencies": {
+		"find-up": "^3.0.0",
+		"read-tsconfig": "^1.0.0"
+	},
+	"devDependencies": {
+		"@guntur/tsconfig": "^1.0.1",
+		"@types/node": "^10.12.17",
+		"ava": "^1.0.1",
+		"typescript": "^3.2.2"
+	}
+}
